@@ -7,7 +7,7 @@ services:
     ports:
       - '8080:80'
   
-  healthcheck:
+    healthcheck:
       test: curl --fail http://localhost/ || exit 1
       interval: 40s
       timeout: 30s

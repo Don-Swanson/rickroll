@@ -1,4 +1,4 @@
-# Self Hosted, self contained Rickroll container.
+#[![CircleCI](https://dl.circleci.com/status-badge/img/circleci/XcfWh7FX5QpFKWFb9rXqFw/EKRBmS78xqDx8pCtnwAE4T/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/circleci/XcfWh7FX5QpFKWFb9rXqFw/EKRBmS78xqDx8pCtnwAE4T/tree/main)   
 
 More info can be found [here](https://www.youtube.com/watch?v=dQw4w9WgXcQ).
 
