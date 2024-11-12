@@ -1,10 +1,14 @@
-# syntax = docker/dockerfile:latest
-
+# Use lightweight Nginx image
 FROM nginxinc/nginx-unprivileged:alpine
 
-# Copy files into image
-ADD html/ /usr/share/nginx/html/
-#ADD conf/nginx-site.conf /etc/nginx/conf.d/default.conf
+# Copy website files
+COPY html/ /usr/share/nginx/html/
 
-# Document what port is required
+# Set permissions
+RUN chmod -R 644 /usr/share/nginx/html
+
+# Expose port 80
 EXPOSE 8080
+
+# Start Nginx
+CMD ["nginx", "-g", "daemon off;"]

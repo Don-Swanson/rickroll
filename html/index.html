@@ -1,33 +1,22 @@
 <!DOCTYPE html>
 <html>
-   <body>
-       <video autoplay loop width="100%">
-
-    <source src="rickroll.mp4"
-            type="video/mp4">
-
-    Sorry, your browser doesn't support embedded videos.
-</video>
-      <script>
-         // Change the variables below to your liking
-         const currentURL = "rickroll.mp4";
-         const pageTitle = "Loading...";
-         // End of changable variables
-         
-         function setTitle() {
-            document.title = pageTitle;
-         }
-         
-         function redirect() {
-            window.location.href = currentURL;
-         }
-         
-         function onload() {
-            setTitle();
-            redirect();
-         }
-         
-         window.onload = onload();
+   <body style="margin: 0; padding: 0; overflow: hidden;">
+       <video id="myVideo" width="100%" height="100%" loop>
+           <source src="rickroll.mp4" type="video/mp4">
+           Sorry, your browser doesn't support embedded videos.
+       </video>
+       <div id="playButton" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+                                  cursor: pointer; background: rgba(0,0,0,0.5); padding: 20px; color: white;">
+           Click to Play
+       </div>
+       <script>
+           const video = document.getElementById('myVideo');
+           const playButton = document.getElementById('playButton');
+           
+           playButton.onclick = () => {
+               video.play();
+               playButton.style.display = 'none';
+           }
        </script>
    </body>
 </html>
