@@ -7,13 +7,13 @@ commands:
         type: string
     steps:
       - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
       - run:
           name: Build Docker image
           command: |
             TAG=1.1.<<pipeline.number>>-<<parameters.arch>>
             docker build -t $DOCKERHUB_USERNAME/rickroll:$TAG .
-      - setup_remote_docker:
-          docker_layer_caching: true
       - run:
           name: Load and Publish Docker image
           command: |
@@ -41,6 +41,7 @@ jobs:
     docker:
       - image: cimg/base:current
     steps:
+      - setup_remote_docker
       - run:
           name: Publish manifest
           command: |

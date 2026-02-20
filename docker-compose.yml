@@ -1,4 +1,3 @@
-version: '3'
 services:
   rickroll:
     container_name: rickroll
